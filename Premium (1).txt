@@ -72,6 +72,13 @@ local function teleportTo(position)
         end
     end
 end
+Tabs.Local:AddButton({
+	Title = "Teleport To DedulWorld",
+	Description = "",
+	Callback = function()
+        teleportTo(Vector3.new(3955.16357421875, 59.14646911621094, 3219.61572265625))
+	end
+})
 
 Tabs.Local:AddButton({
 	Title = "Teleport To BCWorld",
