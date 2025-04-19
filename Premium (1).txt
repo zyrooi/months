@@ -42,7 +42,7 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
     Title = "Switch-Cat-Hub  [ Premium ] - By: ziugpro",
-    SubTitle = "Verison: Arise Crossover Premium",
+    SubTitle = "Verison: Arise Crossover",
     TabWidth = 130,
     Size = UDim2.fromOffset(510, 360),
     Acrylic = true,
@@ -72,13 +72,6 @@ local function teleportTo(position)
         end
     end
 end
-Tabs.Local:AddButton({
-	Title = "Teleport To DedulWorld",
-	Description = "",
-	Callback = function()
-        teleportTo(Vector3.new(3955.16357421875, 59.14646911621094, 3219.61572265625))
-	end
-})
 
 Tabs.Local:AddButton({
 	Title = "Teleport To BCWorld",
@@ -141,6 +134,13 @@ Tabs.Local:AddButton({
 	Description = "",
 	Callback = function()
         teleportTo(Vector3.new(577.9666748046875, 28.4345760345459, 261.4472351074219))
+	end
+})
+Tabs.Local:AddButton({
+	Title = "Teleport To DedulWorld",
+	Description = "",
+	Callback = function()
+        teleportTo(Vector3.new(3955.16357421875, 59.14646911621094, 3219.61572265625))
 	end
 })
 local ToggleEspPlayer = Tabs.Local:AddToggle("ToggleEspPlayer", {Title = "Esp Player", Default = false})
