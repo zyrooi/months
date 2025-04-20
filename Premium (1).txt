@@ -2017,10 +2017,11 @@ local Castle = Tabs.Castle:AddToggle("Castle", {Title = "Auto Join Floor 25 Cast
 Castle:OnChanged(function(Value)
     _G.Castle = Value
 end)
+local type = {"Tick", "Gems"}
 local DropdownCastle = Tabs.Castle:AddDropdown("DropdownCastle", {
         Title = "Select Type",
-        Values = {"Tick", "Gems"},
-        Multi = true,
+        Values = type,
+        Multi = false,
         Default = 1,
     })
 local Castle = Tabs.Castle:AddToggle("Castle", {Title = "Auto Buy Castle Tick", Default = false })
