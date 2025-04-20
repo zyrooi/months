@@ -1,5 +1,5 @@
 game.StarterGui:SetCore("SendNotification", {
-    Title = "SwitchCat Hub",
+    Title = "Switch-Cat-Hub",
     Text = "Success Loading",
     Icon = "rbxthumb://type=Asset&id=71546332785311&w=420&h=420",
     Duration = 10,
@@ -58,6 +58,7 @@ local Tabs = {
     Web = Window:AddTab({ Title = "Webhook", Icon = "file-code" }),
     Check = Window:AddTab({ Title = "Check", Icon = "bluetooth-connected" }),
     Huh = Window:AddTab({ Title = "Key", Icon = "mail-search" }),
+    Castle = Window:AddTab({ Title = "Castle", Icon = "album" }),
     Settings = Window:AddTab({ Title = "Setting", Icon = "settings" }),
     
 }
@@ -2008,6 +2009,29 @@ local decalsyeeted = true
         end
    end
 })
+local Castle = Tabs.Castle:AddToggle("Castle", {Title = "Auto Inferno Castle", Default = false })
+Castle:OnChanged(function(Value)
+    _G.Castle = Value
+end)
+local Castle = Tabs.Castle:AddToggle("Castle", {Title = "Auto Join Floor 25 Castle", Default = false })
+Castle:OnChanged(function(Value)
+    _G.Castle = Value
+end)
+local DropdownCastle = Tabs.Castle:AddDropdown("DropdownCastle", {
+        Title = "Select Type",
+        Values = {"Tick", "Gems"},
+        Multi = true,
+        Default = 1,
+    })
+local Castle = Tabs.Castle:AddToggle("Castle", {Title = "Auto Buy Castle Tick", Default = false })
+Castle:OnChanged(function(Value)
+    _G.Castle = Value
+end)
+local Castle = Tabs.Castle:AddToggle("Castle", {Title = "Auto Leave", Default = false })
+Castle:OnChanged(function(Value)
+    _G.Castle = Value
+end)
+
 SaveManager:SetLibrary(Fluent)
 InterfaceManager:SetLibrary(Fluent)
 
