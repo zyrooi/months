@@ -41,7 +41,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "Switch-Cat-Hub  [ Premium ] - By: ziugpro",
+    Title = "Switch-Cat-Hub  [ Not Premium ] - By: ziugpro",
     SubTitle = "Verison: Arise Crossover",
     TabWidth = 130,
     Size = UDim2.fromOffset(510, 360),
@@ -54,10 +54,6 @@ local Tabs = {
     Main = Window:AddTab({ Title = "Farming", Icon = "layers" }),
     Shop = Window:AddTab({ Title = "Shop", Icon = "shopping-cart" }),
     W = Window:AddTab({ Title = "Weapon", Icon = "sword" }),
-    Click = Window:AddTab({ Title = "Click", Icon = "mouse-pointer-click" }),
-    Web = Window:AddTab({ Title = "Webhook", Icon = "file-code" }),
-    Check = Window:AddTab({ Title = "Check", Icon = "bluetooth-connected" }),
-    Huh = Window:AddTab({ Title = "Key", Icon = "mail-search" }),
     Castle = Window:AddTab({ Title = "Castle", Icon = "album" }),
     Settings = Window:AddTab({ Title = "Setting", Icon = "settings" }),
     
