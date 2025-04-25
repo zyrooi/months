@@ -65,7 +65,7 @@ if game.GameId == 7074860883 then
 
     local BlacklistKeys = {
         "gwg1wimqkoswlt1vs0numkufg4ciunj59yy",
-        "badkey456",
+        "F8vYkM5wT2QbL7cZ9rX6nP1h0A3dR4jz",
         "xyz789"
     }
 
@@ -81,7 +81,7 @@ if game.GameId == 7074860883 then
     local userKey = getgenv().key
 
     if not userKey or isKeyValid(BlacklistKeys, userKey) then
-        game.Players.LocalPlayer:Kick("[SwitchCat-Hub] Key Blacklist")
+        game.Players.LocalPlayer:Kick("[Switch-Cat-Hub]-Key Blacklist")
         return
     end
 
