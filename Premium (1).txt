@@ -2032,7 +2032,156 @@ local Castle = Tabs.Castle:AddToggle("Castle", {Title = "Auto Leave", Default = 
 Castle:OnChanged(function(Value)
     _G.Castle = Value
 end)
+Tabs.Web:AddButton({
+    Title = "Check Beru",
+    Description = "",
+    Callback = function()
+        local beruExists = false
+        for _, obj in pairs(workspace:GetChildren()) do
+            if obj:IsA("Model") and obj.Name == "Beru" then
+                beruExists = true
+                break
+            end
+        end
+        local status = beruExists and "✅" or "❌"
+        game.StarterGui:SetCore("SendNotification", {
+            Title = "Switch-Cat-Hub",
+            Text = "Status: " .. status,
+            Icon = "rbxthumb://type=Asset&id=71546332785311&w=420&h=420",
+            Duration = 10,
+            Button1 = "Cannel",
+            Callback = function()
+            end
+        })
+    end
+})
 
+Tabs.Web:AddButton({
+    Title = "Copy Server JobId",
+    Description = "",
+    Callback = function()
+        local jobId = game.JobId
+        local success, err = pcall(function()
+            setclipboard(jobId)
+        end)
+
+        local status = success and "✅" or "❌"
+        game.StarterGui:SetCore("SendNotification", {
+            Title = "Switch-Cat-Hub",
+            Text = "Status: " .. status,
+            Icon = "rbxthumb://type=Asset&id=71546332785311&w=420&h=420",
+            Duration = 10,
+            Button1 = "Cannel",
+            Callback = function()
+            end
+        })
+    end
+})
+
+local Inputxhop = Tabs.Web:AddInput("Inputxhop", {
+    Title = "Job-Id",
+    Default = "",
+    Numeric = false,
+    Finished = false,
+    Placeholder = "Input Job-Id",
+    Callback = function(Value)
+        jobIdInput = Value
+    end
+})
+
+Tabs.Web:AddButton({
+    Title = "Join Server",
+    Description = "",
+    Callback = function()
+        local jobId = jobIdInput
+        if jobId and jobId ~= "" then
+            game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, jobId)
+        end
+    end
+})
+
+Tabs.Web:AddButton({
+    Title = "Join Random Server",
+    Description = "",
+    Callback = function()
+        local placeId = game.PlaceId
+        local teleportService = game:GetService("TeleportService")
+        teleportService:Teleport(placeId)
+    end
+})
+
+Tabs.Web:AddButton({
+    Title = "Check Player Count",
+    Description = "",
+    Callback = function()
+        local playerCount = #game.Players:GetPlayers()
+        game.StarterGui:SetCore("SendNotification", {
+            Title = "Switch-Cat-Hub",
+            Text = "Player: " .. tostring(playerCount),
+            Icon = "rbxthumb://type=Asset&id=71546332785311&w=420&h=420",
+            Duration = 10,
+            Button1 = "Cannel",
+            Callback = function()
+            end
+        })
+    end
+})
+
+Tabs.Web:AddButton({
+    Title = "Check Mob Count",
+    Description = "",
+    Callback = function()
+        local mobFolder = workspace:FindFirstChild("Mobs")
+        local mobCount = 0
+        if mobFolder then
+            mobCount = #mobFolder:GetChildren()
+        end
+        game.StarterGui:SetCore("SendNotification", {
+            Title = "Switch-Cat-Hub",
+            Text = "Mob: " .. tostring(mobCount),
+            Icon = "rbxthumb://type=Asset&id=71546332785311&w=420&h=420",
+            Duration = 10,
+            Button1 = "Cannel",
+            Callback = function()
+            end
+        })
+    end
+})
+
+local HttpService = game:GetService("HttpService")
+
+local InputWebhook = Tabs.Web:AddInput("InputWebhook", {
+    Title = "Webhook URL",
+    Default = "",
+    Numeric = false,
+    Finished = false,
+    Placeholder = "Input Webhook",
+    Callback = function(Value)
+        _G.WebhookUrl = Value
+    end
+})
+
+local ToggleProHob = Tabs.Web:AddToggle("ToggleProHob", {
+    Title = "Auto Send JobId",
+    Default = false
+})
+
+ToggleProHob:OnChanged(function(Value)
+    _G.ToggleProHob = Value
+end)
+
+spawn(function()
+    while wait(5) do
+        if _G.ToggleProHob and _G.WebhookUrl and _G.WebhookUrl ~= "" then
+            local Data = {
+                ["content"] = "Random JobId: " .. game.JobId
+            }
+            local success, response = pcall(function()
+                return HttpService:PostAsync(_G.WebhookUrl, HttpService:JSONEncode(Data), Enum.HttpContentType.ApplicationJson)
+            end)
+        end
+    end
+end)
 SaveManager:SetLibrary(Fluent)
 InterfaceManager:SetLibrary(Fluent)
 
