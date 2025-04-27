@@ -2,6 +2,7 @@ if game.GameId == 7074860883 then
     local PremiumKeys = {
         "njzhh2qib8qjpbszvo7wao346p496mitpcm",
         "CAT-0IHEW-O7HFA-KHFSD-9829N-UYQDA",
+        "CAT-YNRIV-DKPSE-IICNW-JSDSI-BYHJO",
     }
 
     local FreeKeys = {
