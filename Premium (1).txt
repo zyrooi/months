@@ -53,7 +53,7 @@ local Tabs = {
     Local = Window:AddTab({ Title = "Tab Location and Castle", Icon = "" }),
     Main = Window:AddTab({ Title = "Tab Farm and Dungeon", Icon = "" }),
     Shop = Window:AddTab({ Title = "Tab Shop and Weapon", Icon = "" }),
-    Click = Window:AddTab({ Title = "Tab Click", Icon = "" }),
+    Click = Window:AddTab({ Title = "Tab Click and KeyBind", Icon = "" }),
     Web = Window:AddTab({ Title = "Tab Webhook and Server", Icon = "" }),
     Settings = Window:AddTab({ Title = "Tab Setting", Icon = "" }),
     
@@ -751,7 +751,52 @@ TogglePro2mm:OnChanged(function(Value)
     _G.TogglePro2mm = Value
 end)
 
+local ToggleKeyE = Tabs.Click:AddToggle("ToggleKeyE", {Title = "Auto Keybind E", Default = false})
+ToggleKeyE:OnChanged(function(Value)
+    _G.ToggleKeyE = Value
+end)
 
+spawn(function()
+    while task.wait(1) do
+        if _G.ToggleKeyE then
+            game:GetService("UserInputService").InputBegan:Connect(function(input, gpe)
+                if not gpe and input.KeyCode == Enum.KeyCode.E then
+                end
+            end)
+        end
+    end
+end)
+local ToggleKeyR = Tabs.Click:AddToggle("ToggleKeyR", {Title = "Auto Keybind R", Default = false})
+ToggleKeyR:OnChanged(function(Value)
+    _G.ToggleKeyR = Value
+end)
+
+spawn(function()
+    while task.wait(1) do
+        if _G.ToggleKeyR then
+            game:GetService("UserInputService").InputBegan:Connect(function(input, gpe)
+                if not gpe and input.KeyCode == Enum.KeyCode.R then
+                end
+            end)
+        end
+    end
+end)
+local ToggleKeyA = Tabs.Click:AddToggle("ToggleKeyA", {Title = "Auto Keybind A", Default = false})
+ToggleKeyA:OnChanged(function(Value)
+    _G.ToggleKeyA = Value
+end)
+
+spawn(function()
+    while task.wait(1) do
+        if _G.ToggleKeyA then
+            game:GetService("UserInputService").InputBegan:Connect(function(input, gpe)
+                if not gpe and input.KeyCode == Enum.KeyCode.A
+then
+                end
+            end)
+        end
+    end
+end)
 local TogglePro1 = Tabs.Click:AddToggle("TogglePro1", {Title = "Auto Click 1", Default = false})
 TogglePro1:OnChanged(function(Value)
     _G.TogglePro1 = Value
