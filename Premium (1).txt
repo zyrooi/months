@@ -1,15 +1,14 @@
 game.StarterGui:SetCore("SendNotification", {
-    Title = "Switch-Cat-Hub",
+    Title = "𝚂𝚘𝚕𝚒𝚝𝚞𝚍𝚎 𝙷𝚞𝚋",
     Text = "Success Loading",
-    Icon = "rbxthumb://type=Asset&id=71546332785311&w=420&h=420",
-    Duration = 10,
-    Button1 = "Cannel",
+    Icon = "rbxthumb://type=Asset&id=103635972484891&w=420&h=420",
+    Duration = 5,
     Callback = function()
     end
 })
 repeat task.wait() until game:IsLoaded()
 
-getgenv().Image = "rbxthumb://type=Asset&id=79606278142518&w=420&h=420"
+getgenv().Image = "rbxthumb://type=Asset&id=103635972484891&w=420&h=420"
 getgenv().ToggleUI = "LeftControl"
 
 task.spawn(function()
@@ -41,10 +40,10 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "Switch-Cat-Hub  [ Premium ] - By: ziugpro",
-    SubTitle = "Verison: Arise Crossover",
+    Title = "𝚂𝚘𝚕𝚒𝚝𝚞𝚍𝚎 𝙷𝚞𝚋-Arise [ Premium ]",
+    SubTitle = "By Ziugpro",
     TabWidth = 130,
-    Size = UDim2.fromOffset(510, 360),
+    Size = UDim2.fromOffset(505, 355),
     Acrylic = true,
     Theme = "Dark",
     MinimizeKey = Enum.KeyCode.LeftControl
