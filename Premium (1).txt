@@ -42,7 +42,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 local Window = Fluent:CreateWindow({
     Title = "Solitude Hub [ Premium ]",
     SubTitle = "By Ziugpro",
-    TabWidth = 130,
+    TabWidth = 140,
     Size = UDim2.fromOffset(505, 355),
     Acrylic = true,
     Theme = "Dark",
@@ -50,16 +50,13 @@ local Window = Fluent:CreateWindow({
 })
 
 local Tabs = {
-    Local = Window:AddTab({ Title = "Location", Icon = "map-pin" }),
-    Main = Window:AddTab({ Title = "Farming", Icon = "layers" }),
-    Shop = Window:AddTab({ Title = "Shop", Icon = "shopping-cart" }),
-    W = Window:AddTab({ Title = "Weapon", Icon = "sword" }),
-    Click = Window:AddTab({ Title = "Click", Icon = "mouse-pointer-click" }),
-    Web = Window:AddTab({ Title = "Webhook", Icon = "file-code" }),
-    Check = Window:AddTab({ Title = "Check", Icon = "bluetooth-connected" }),
-    Huh = Window:AddTab({ Title = "Key", Icon = "mail-search" }),
-    Castle = Window:AddTab({ Title = "Castle", Icon = "album" }),
-    Settings = Window:AddTab({ Title = "Setting", Icon = "settings" }),
+    Local = Window:AddTab({ Title = "Tab Location", Icon = "" }),
+    Main = Window:AddTab({ Title = "Tab Farm and Dungeon", Icon = "" }),
+    Shop = Window:AddTab({ Title = "Tab Shop and Weapon", Icon = "" }),
+    Click = Window:AddTab({ Title = "Tab Click", Icon = "" }),
+    Web = Window:AddTab({ Title = "Tab Webhook", Icon = "" }),
+    Castle = Window:AddTab({ Title = "Tab Castle", Icon = "" }),
+    Settings = Window:AddTab({ Title = "Tab Setting", Icon = "" }),
     
 }
 local function teleportTo(position)
@@ -638,25 +635,25 @@ Tabs.Shop:AddButton({
 	Callback = function()
    end
 })
-local Dropdown = Tabs.W:AddDropdown("Drojjpdown", {
+local Dropdown = Tabs.Shop:AddDropdown("Drojjpdown", {
         Title = "Choosr Weapon",
         Values = {""},
         Multi = false,
         Default = 1,
     })
-local Dropdown = Tabs.W:AddDropdown("Dropdkbown", {
+local Dropdown = Tabs.Shop:AddDropdown("Dropdkbown", {
         Title = "Choose Tier",
         Values = {"E", "B", "D", "A", "C"},
         Multi = false,
         Default = 1,
     })
-local Kbdbdbeb = Tabs.W:AddToggle("Kbdbdbeb", {Title = "Auto Update", Default = false })
+local Kbdbdbeb = Tabs.Shop:AddToggle("Kbdbdbeb", {Title = "Auto Update", Default = false })
 Kbdbdbeb:OnChanged(function(Value)
     _G.Kbdbdbeb = Value
 end)
 
 
-local ToggleNuysing = Tabs.W:AddToggle("ToggleNuysing", {Title = "Buy Missing", Default = false})
+local ToggleNuysing = Tabs.Shop:AddToggle("ToggleNuysing", {Title = "Buy Missing", Default = false})
 ToggleNuysing:OnChanged(function(Value)
     _G.ToggleNuysing = Value
 end)
@@ -1751,137 +1748,6 @@ spawn(function()
         end
     end
 end)
-
-local InputChekc = Tabs.Check:AddInput("InputChekc", {
-        Title = "You key",
-        Default = "",
-        Numeric = false,
-        Finished = false,
-        Placeholder = "Input",
-        Callback = function(Value)
-        end
-    })
-Tabs.Check:AddButton({
-	Title = "Check Key Blacklist",
-	Description = "Check If The Key Is Blacklisted Or Not",
-	Callback = function()
-Fluent:Notify({
-    Title = "SwitchCat_Hub",
-    Content = "Status Blacklist: 🟢",
-    Duration = 8
-})
-   end
-})
-Tabs.Check:AddButton({
-	Title = "Check Expiration Time",
-	Description = "",
-	Callback = function()
-Fluent:Notify({
-    Title = "SwitchCat_Hub",
-    Content = "Expiration: Lifetime",
-    Duration = 8
-})
-   end
-})
-Tabs.Check:AddParagraph({
-        Title = "Key Working: 🟢",
-        Content = "Not Working = 🔴"
-    })
-local ToggleProkbkbkb = Tabs.Check:AddToggle("ToggleProkbkbkb", {Title = "I'm Gay Please No Blacklist", Description = "Turn This On To Avoid Being Added To Blacklist :))", Default = true })
-ToggleProkbkbkb:OnChanged(function(Value)
-    _G.ToggleProkbkbkb = Value
-end)
-
-Tabs.Huh:AddButton({
-	Title = "Check Beru Mob",
-	Description = "",
-	Callback = function()
-game.StarterGui:SetCore("SendNotification", {
-    Title = "SwitchCat Hub",
-    Text = "Beru Don't Having For Server",
-    Icon = "rbxthumb://type=Asset&id=71546332785311&w=420&h=420",
-    Duration = 10,
-    Button1 = "Cannel",
-    Callback = function()
-    end
-})
-   end
-})
-Tabs.Huh:AddButton({
-	Title = "Remove Config Script",
-	Description = "",
-	Callback = function()
-game.StarterGui:SetCore("SendNotification", {
-    Title = "SwitchCat Hub",
-    Text = "Success Detele Config",
-    Icon = "rbxthumb://type=Asset&id=71546332785311&w=420&h=420",
-    Duration = 5,
-    Button1 = "Cannel",
-    Callback = function()
-    end
-})
-   end
-})
-Tabs.Huh:AddButton({
-	Title = "Remove You Key",
-	Description = "Click This Button Your Key Will Be Added To Blacklist :))",
-	Callback = function()
-game.StarterGui:SetCore("SendNotification", {
-    Title = "SwitchCat Hub",
-    Text = "Troll We Will Not Blacklist Key If You Do Not Violate",
-    Icon = "rbxthumb://type=Asset&id=71546332785311&w=420&h=420",
-    Duration = 5,
-    Button1 = "Cannel",
-    Callback = function()
-    end
-})
-   end
-})
-Tabs.Huh:AddButton({
-	Title = "Antilag",
-	Description = "",
-	Callback = function()
-local decalsyeeted = true
-        local g = game
-        local w = g.Workspace
-        local l = g.Lighting
-        local t = w.Terrain
-        sethiddenproperty(l,"Technology",2)
-        sethiddenproperty(t,"Decoration",false)
-        t.WaterWaveSize = 0
-        t.WaterWaveSpeed = 0
-        t.WaterReflectance = 0
-        t.WaterTransparency = 0
-        l.GlobalShadows = false
-        l.FogEnd = 9e9
-        l.Brightness = 0
-        settings().Rendering.QualityLevel = "Level01"
-        for i, v in pairs(g:GetDescendants()) do
-            if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
-                v.Material = "Plastic"
-                v.Reflectance = 0
-            elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
-                v.Transparency = 1
-            elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
-                v.Lifetime = NumberRange.new(0)
-            elseif v:IsA("Explosion") then
-                v.BlastPressure = 1
-                v.BlastRadius = 1
-            elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
-                v.Enabled = false
-            elseif v:IsA("MeshPart") then
-                v.Material = "Plastic"
-                v.Reflectance = 0
-                v.TextureID = 10385902758728957
-            end
-        end
-        for i, e in pairs(l:GetChildren()) do
-            if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
-                e.Enabled = false
-            end
-        end
-   end
-})
 local Castle = Tabs.Castle:AddToggle("Castle", {Title = "Auto Inferno Castle", Default = false })
 Castle:OnChanged(function(Value)
     _G.Castle = Value
