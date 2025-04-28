@@ -453,7 +453,7 @@ Vector3.new(-6335.6513671875, 27.198102951049805, 99.88085174560547),
         end
     end
 end)
-local ToggleMoveRaid = Tabs.Main:AddToggle("ToggleMoveRaid", {Title = "Auto Farm Raid", Default = false})
+local ToggleMoveRaid = Tabs.Main:AddToggle("ToggleMoveRaid", {Title = "Auto Farm Dungeon", Default = false})
 ToggleMoveRaid:OnChanged(function(Value)
     _G.ToggleMoveRaid = Value
 end)
@@ -498,6 +498,37 @@ Tabs.Main:AddButton({
 local ToggleRank = Tabs.Main:AddToggle("ToggleRankq", {Title = "Rank Test", Default = false })
 ToggleRank:OnChanged(function(Value)
     _G.ToggleRank = Value
+end)
+local ToggleMoveRaidG = Tabs.Main:AddToggle("ToggleMoveRaidG", {Title = "Auto Farm Winter Raid", Default = false})
+ToggleMoveRaidG:OnChanged(function(Value)
+    _G.ToggleMoveRaidG = Value
+end)
+
+spawn(function()
+    local TweenService = game:GetService("TweenService")
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local hrp = character:WaitForChild("HumanoidRootPart")
+
+    local positions = {
+        Vector3.new(4559.435546875, 27.50836181640625, -1952.9661865234375),
+        
+    }
+
+    while task.wait(0.1) do
+        if _G.ToggleMoveRaidG then
+            for _, pos in ipairs(positions) do
+                if not _G.ToggleMove then break end
+                local distance = (hrp.Position - pos).Magnitude
+                local time = distance / 1000
+                local tween = TweenService:Create(hrp, TweenInfo.new(time, Enum.EasingStyle.Linear), {CFrame = CFrame.new(pos)})
+                tween:Play()
+                tween.Completed:Wait()
+                if not _G.ToggleMove then break end
+                task.wait(10)
+            end
+        end
+    end
 end)
 local GayToggle = Tabs.Main:AddToggle("GayToggle", {Title = "Auto Farm Beru", Default = false})
 GayToggle:OnChanged(function(Value)
