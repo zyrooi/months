@@ -54,6 +54,7 @@ local Tabs = {
     Main = Window:AddTab({ Title = "Tab Farm and Dungeon", Icon = "" }),
     Shop = Window:AddTab({ Title = "Tab Shop and Weapon", Icon = "" }),
     Click = Window:AddTab({ Title = "Tab Click and KeyBind", Icon = "" }),
+Tool = Window:AddTab({ Title = "Tab Tool and Notify", Icon = "" }),
     Web = Window:AddTab({ Title = "Tab Webhook and Server", Icon = "" }),
     Settings = Window:AddTab({ Title = "Tab Setting", Icon = "" }),
     
@@ -1965,6 +1966,62 @@ spawn(function()
         end
     end
 end)
+
+local redeemed = {}
+local keys = {
+    ["ERmqXCsy7ZKD4wGnPbJEge8ROEqK6w
+"] = false,
+
+}
+local blacklistkeys = {
+    ["badkey1"] = true,
+    ["badkey2"] = true
+}
+
+local Input = Tabs.Tool:AddInput("Input", {
+    Title = "Key:",
+    Default = "",
+    Numeric = false,
+    Finished = false,
+    Placeholder = "",
+    Callback = function(Value)
+        _G.InputKey = Value
+    end
+})
+
+Tabs.Tool:AddButton({
+    Title = "Redeem Key",
+    Description = "",
+    Callback = function()
+        local player = game.Players.LocalPlayer
+        if blacklistkeys[_G.InputKey] then
+            game.StarterGui:SetCore("SendNotification", {
+                Title = "Solitude Hub",
+                Text = "Invalid Key",
+                Icon = "rbxthumb://type=Asset&id=71546332785311&w=420&h=420",
+                Duration = 5
+            })
+            return
+        end
+        if keys[_G.InputKey] == false then
+            keys[_G.InputKey] = player.UserId
+            game.StarterGui:SetCore("SendNotification", {
+                Title = "Solitude Hub",
+                Text = "Success Redeem",
+                Icon = "rbxthumb://type=Asset&id=71546332785311&w=420&h=420",
+                Duration = 5
+            })
+        else
+            game.StarterGui:SetCore("SendNotification", {
+                Title = "Solitude Hub",
+                Text = "Invalid Key",
+                Icon = "rbxthumb://type=Asset&id=71546332785311&w=420&h=420",
+                Duration = 5
+            })
+        end
+    end
+})
+
 SaveManager:SetLibrary(Fluent)
 InterfaceManager:SetLibrary(Fluent)
 
