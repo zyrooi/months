@@ -42,20 +42,19 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 local Window = Fluent:CreateWindow({
     Title = "Solitude Hub [ Premium ]",
     SubTitle = "By Ziugpro",
-    TabWidth = 140,
-    Size = UDim2.fromOffset(505, 355),
+    TabWidth = 150,
+    Size = UDim2.fromOffset(535, 360),
     Acrylic = true,
     Theme = "Dark",
     MinimizeKey = Enum.KeyCode.LeftControl
 })
 
 local Tabs = {
-    Local = Window:AddTab({ Title = "Tab Location", Icon = "" }),
+    Local = Window:AddTab({ Title = "Tab Location and Castle", Icon = "" }),
     Main = Window:AddTab({ Title = "Tab Farm and Dungeon", Icon = "" }),
     Shop = Window:AddTab({ Title = "Tab Shop and Weapon", Icon = "" }),
     Click = Window:AddTab({ Title = "Tab Click", Icon = "" }),
-    Web = Window:AddTab({ Title = "Tab Webhook", Icon = "" }),
-    Castle = Window:AddTab({ Title = "Tab Castle", Icon = "" }),
+    Web = Window:AddTab({ Title = "Tab Webhook and Server", Icon = "" }),
     Settings = Window:AddTab({ Title = "Tab Setting", Icon = "" }),
     
 }
@@ -1748,26 +1747,26 @@ spawn(function()
         end
     end
 end)
-local Castle = Tabs.Castle:AddToggle("Castle", {Title = "Auto Inferno Castle", Default = false })
+local Castle = Tabs.Local:AddToggle("Castle", {Title = "Auto Inferno Castle", Default = false })
 Castle:OnChanged(function(Value)
     _G.Castle = Value
 end)
-local Castle = Tabs.Castle:AddToggle("Castle", {Title = "Auto Join Floor 25 Castle", Default = false })
+local Castle = Tabs.Local:AddToggle("Castle", {Title = "Auto Join Floor 25 Castle", Default = false })
 Castle:OnChanged(function(Value)
     _G.Castle = Value
 end)
 local type = {"Tick", "Gems"}
-local DropdownCastle = Tabs.Castle:AddDropdown("DropdownCastle", {
+local DropdownCastle = Tabs.Local:AddDropdown("DropdownCastle", {
         Title = "Select Type",
         Values = type,
         Multi = false,
         Default = 1,
     })
-local Castle = Tabs.Castle:AddToggle("Castle", {Title = "Auto Buy Castle Tick", Default = false })
+local Castle = Tabs.Local:AddToggle("Castle", {Title = "Auto Buy Castle Tick", Default = false })
 Castle:OnChanged(function(Value)
     _G.Castle = Value
 end)
-local Castle = Tabs.Castle:AddToggle("Castle", {Title = "Auto Leave", Default = false })
+local Castle = Tabs.Local:AddToggle("Castle", {Title = "Auto Leave", Default = false })
 Castle:OnChanged(function(Value)
     _G.Castle = Value
 end)
