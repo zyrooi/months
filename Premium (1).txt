@@ -2021,22 +2021,6 @@ Tabs.Tool:AddButton({
         end
     end
 })
-local TogglePrScamo = Tabs.Tool:AddToggle("TogglePrScamo", {Title = "Auto Send Job-Id Server Has Beru", Default = false })
-TogglePrScamo:OnChanged(function(Value)
-    _G.TogglePrScamo = Value
-end)
-local TogglePrScamo = Tabs.Tool:AddToggle("TogglePrScamo", {Title = "Auto Send Job-Id Server Has Rip_Indra", Default = false })
-TogglePrScamo:OnChanged(function(Value)
-    _G.TogglePrScamo = Value
-end)
-local TogglePrScamo = Tabs.Tool:AddToggle("TogglePrScamo", {Title = "Auto Send Job-Id Server Has Beru v2", Default = false })
-TogglePrScamo:OnChanged(function(Value)
-    _G.TogglePrScamo = Value
-end)
-local TogglePrScamo = Tabs.Tool:AddToggle("TogglePrScamo", {Title = "Auto Send You Info For You Play Game", Default = false })
-TogglePrScamo:OnChanged(function(Value)
-    _G.TogglePrScamo = Value
-end)
 
 
 SaveManager:SetLibrary(Fluent)
