@@ -69,6 +69,13 @@ local function teleportTo(position)
         end
     end
 end
+Tabs.Local:AddButton({
+	Title = "Teleport To Winter Raid",
+	Description = "",
+	Callback = function()
+        teleportTo(Vector3.new(4559.435546875, 27.50836181640625, -1952.9661865234375))
+	end
+})
 
 Tabs.Local:AddButton({
 	Title = "Teleport To BCWorld",
@@ -524,7 +531,7 @@ spawn(function()
                 local tween = TweenService:Create(hrp, TweenInfo.new(time, Enum.EasingStyle.Linear), {CFrame = CFrame.new(pos)})
                 tween:Play()
                 tween.Completed:Wait()
-                if not _G.ToggleMove then break end
+                if not _G.ToggleMoveRaidG then break end
                 task.wait(10)
             end
         end
