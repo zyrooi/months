@@ -1,5 +1,5 @@
 game.StarterGui:SetCore("SendNotification", {
-    Title = "𝚂𝚘𝚕𝚒𝚝𝚞𝚍𝚎 𝙷𝚞𝚋",
+    Title = "Solitude Hub",
     Text = "Success Loading",
     Icon = "rbxthumb://type=Asset&id=103635972484891&w=420&h=420",
     Duration = 5,
@@ -40,7 +40,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "𝚂𝚘𝚕𝚒𝚝𝚞𝚍𝚎 𝙷𝚞𝚋-Arise [ Premium ]",
+    Title = "Solitude Hub [ Premium ]",
     SubTitle = "By Ziugpro",
     TabWidth = 130,
     Size = UDim2.fromOffset(505, 355),
@@ -48,6 +48,7 @@ local Window = Fluent:CreateWindow({
     Theme = "Dark",
     MinimizeKey = Enum.KeyCode.LeftControl
 })
+
 local Tabs = {
     Local = Window:AddTab({ Title = "Location", Icon = "map-pin" }),
     Main = Window:AddTab({ Title = "Farming", Icon = "layers" }),
@@ -262,7 +263,6 @@ spawn(function()
         end
     end
 end)
-local Main = Tabs.Main:AddSection("Auto Click")
 local keybind = {"B", "V", "M", "C", "E", "R"}
 
 local Dropdown = Tabs.Main:AddDropdown("Dropdown", {
@@ -304,13 +304,13 @@ spawn(function()
         end
     end
 end)
-local ToggleProNrobro = Tabs.Main:AddToggle("ToggleProNrobro", {Title = "Auto Click 0.7s ( Neft )", Default = false})
+local ToggleProNrobro = Tabs.Main:AddToggle("ToggleProNrobro", {Title = "Auto Click 0.9s ( Neft )", Default = false})
 ToggleProNrobro:OnChanged(function(Value)
     _G.ToggleProNrobro = Value
 end)
 
 spawn(function()
-    while task.wait(0.7) do
+    while task.wait(0.9) do
         if _G.ToggleProNrobro then
             game:GetService("VirtualInputManager"):SendMouseButtonEvent(0, 0, 0, true, game, 0)
             task.wait()
@@ -346,7 +346,6 @@ spawn(function()
         end
     end
 end)
-local Main = Tabs.Main:AddSection("Farming")
 local locations = {
     ["Luryu"] = Vector3.new(2856.60791015625, 45.4265251159668, -2606.3017578125),
     ["Heaven"] = Vector3.new(160.04052734375, 32.89609146118164, -4341.4755859375),        
@@ -384,7 +383,7 @@ spawn(function()
 end)
 
 
-local ToggksdhleMove = Tabs.Main:AddToggle("ToggksdhleMove", {Title = "Auto Farm All Mob v2 ( Premium )", Description = "Farm Super Fast Without Errors And This Feature Is Completed", Default = false})
+local ToggksdhleMove = Tabs.Main:AddToggle("ToggksdhleMove", {Title = "Auto Farm All Mob v2", Description = "Farm Super Fast Without Errors And This Feature Is Completed", Default = false})
 ToggksdhleMove:OnChanged(function(Value)
     _G.ToggksdhleMove = Value
 end)
@@ -461,8 +460,7 @@ spawn(function()
         Vector3.new(388.3311462402344, 28.08351707458496, 120.54840087890625),
         Vector3.new(408.7129821777344, 28.774564743041992, 79.71439361572266),
         Vector3.new(425.4246826171875, 28.794658660888672, 11.996100425720215),
-        Vector3.new(408.7129821777344, 28.774564743041992, 79.71439361572266),
-        Vector3.new(291.1810302734375, 28.588546752929688, 53.70823287963867),
+      Vector3.new(291.1810302734375, 28.588546752929688, 53.70823287963867),
     }
 
     while task.wait(0.1) do
@@ -558,15 +556,13 @@ spawn(function()
     local hrp = character:WaitForChild("HumanoidRootPart")
 
     local positions = {
-        Vector3.new(100, 10, 100),
-        Vector3.new(200, 10, 200),
-        Vector3.new(-6335.6513671875, 27.198102951049805, 99.88085174560547),
+Vector3.new(-6335.6513671875, 27.198102951049805, 99.88085174560547),
         Vector3.new(-6380.3818359375, 27.198104858398438, -46.96369552612305),
         Vector3.new(-6425.93408203125, 27.198102951049805, -98.61336517333984),
         Vector3.new(-6482.87744140625, 27.198104858398438, -49.096038818359375),
     }
 
-    while task.wait(0.1) do
+    while task.wait(10) do
         if _G.ToggleFarmSkobsi then
             for _, pos in ipairs(positions) do
                 if not _G.ToggleFarmSkobsi then break end
@@ -580,8 +576,6 @@ spawn(function()
         end
     end
 end)
-local Dung = Tabs.Main:AddSection("Dungeon")
-
 local ToggleMoveRaid = Tabs.Main:AddToggle("ToggleMoveRaid", {Title = "Auto Farm Raid", Default = false})
 ToggleMoveRaid:OnChanged(function(Value)
     _G.ToggleMoveRaid = Value
@@ -628,7 +622,6 @@ local ToggleRank = Tabs.Main:AddToggle("ToggleRankq", {Title = "Rank Test", Defa
 ToggleRank:OnChanged(function(Value)
     _G.ToggleRank = Value
 end)
-local Mkwjwain = Tabs.Main:AddSection("Beru")
 local GayToggle = Tabs.Main:AddToggle("GayToggle", {Title = "Auto Farm Beru", Default = false})
 GayToggle:OnChanged(function(Value)
     _G.GayToggle = Value
