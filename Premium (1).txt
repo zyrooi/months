@@ -144,125 +144,7 @@ Tabs.Local:AddButton({
         teleportTo(Vector3.new(3955.16357421875, 59.14646911621094, 3219.61572265625))
 	end
 })
-local ToggleEspPlayer = Tabs.Local:AddToggle("ToggleEspPlayer", {Title = "Esp Player", Default = false})
-ToggleEspPlayer:OnChanged(function(Value)
-    _G.ToggleEspPlayer = Value
-end)
-
-spawn(function()
-    while wait() do
-        if _G.ToggleEspPlayer then
-            local function createESP(player)
-                if player.Character and player.Character:FindFirstChild("Head") then
-                    if player.Character:FindFirstChild("ESP") then return end
-                    local head = player.Character.Head
-                    local billboardGui = Instance.new("BillboardGui")
-                    billboardGui.Name = "ESP"
-                    billboardGui.Adornee = head
-                    billboardGui.Parent = player.Character
-                    billboardGui.Size = UDim2.new(0, 200, 0, 50)
-                    billboardGui.StudsOffset = Vector3.new(0, 3, 0)
-                    billboardGui.AlwaysOnTop = true
-
-                    local distanceTag = Instance.new("TextLabel")
-                    distanceTag.Parent = billboardGui
-                    distanceTag.Text = string.format("%.2f studs", (head.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude)
-                    distanceTag.TextColor3 = Color3.fromRGB(255, 255, 255)
-                    distanceTag.TextStrokeTransparency = 0.5
-                    distanceTag.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
-                    distanceTag.BackgroundTransparency = 1
-                    distanceTag.Size = UDim2.new(1, 0, 0.3, 0)
-                    distanceTag.Position = UDim2.new(0, 0, 0, 0)
-                    distanceTag.TextScaled = false
-                    distanceTag.Font = Enum.Font.SourceSansBold
-                    distanceTag.TextSize = 22
-
-                    local nameTag = Instance.new("TextLabel")
-                    nameTag.Parent = billboardGui
-                    nameTag.Text = player.Name
-                    nameTag.TextColor3 = Color3.fromRGB(255, 255, 255)
-                    nameTag.TextStrokeTransparency = 0.5
-                    nameTag.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
-                    nameTag.BackgroundTransparency = 1
-                    nameTag.Size = UDim2.new(1, 0, 0.7, 0)
-                    nameTag.Position = UDim2.new(0, 0, 0.3, 0)
-                    nameTag.TextScaled = false
-                    nameTag.Font = Enum.Font.SourceSansBold
-                    nameTag.TextSize = 22
-
-                    game:GetService("RunService").Heartbeat:Connect(function()
-                        if player.Character and player.Character:FindFirstChild("Head") and billboardGui and billboardGui.Parent then
-                            local dist = (head.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
-                            distanceTag.Text = string.format("%.2f studs", dist)
-                            billboardGui.StudsOffset = Vector3.new(0, 3, 0)
-                        end
-                    end)
-                end
-            end
-
-            for _, p in ipairs(game.Players:GetPlayers()) do
-                if p ~= game.Players.LocalPlayer then
-                    createESP(p)
-                end
-            end
-
-            game.Players.PlayerAdded:Connect(function(p)
-                p.CharacterAdded:Connect(function()
-                    createESP(p)
-                end)
-            end)
-        else
-            for _, p in ipairs(game.Players:GetPlayers()) do
-                if p.Character and p.Character:FindFirstChild("ESP") then
-                    p.Character.ESP:Destroy()
-                end
-            end
-        end
-    end
-end)
-
-local ToggleEspNpc = Tabs.Local:AddToggle("ToggleEspNpc", {Title = "Esp NPC", Default = false})
-ToggleEspNpc:OnChanged(function(Value)
-    _G.ToggleEspNpc = Value
-end)
-
-spawn(function()
-    while wait() do
-        if _G.ToggleEspNpc then
-            for _, npc in pairs(workspace:GetDescendants()) do
-                if npc:IsA("Model") and npc:FindFirstChild("Head") and not npc:FindFirstChild("Humanoid") and not npc:FindFirstChild("ESP") then
-                    local head = npc.Head
-                    local billboardGui = Instance.new("BillboardGui")
-                    billboardGui.Name = "ESP"
-                    billboardGui.Adornee = head
-                    billboardGui.Parent = npc
-                    billboardGui.Size = UDim2.new(0, 200, 0, 50)
-                    billboardGui.StudsOffset = Vector3.new(0, 3, 0)
-                    billboardGui.AlwaysOnTop = true
-
-                    local nameTag = Instance.new("TextLabel")
-                    nameTag.Parent = billboardGui
-                    nameTag.Text = npc.Name
-                    nameTag.TextColor3 = Color3.fromRGB(255, 255, 255)
-                    nameTag.TextStrokeTransparency = 0.5
-                    nameTag.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
-                    nameTag.BackgroundTransparency = 1
-                    nameTag.Size = UDim2.new(1, 0, 1, 0)
-                    nameTag.Position = UDim2.new(0, 0, 0, 0)
-                    nameTag.TextScaled = false
-                    nameTag.Font = Enum.Font.SourceSansBold
-                    nameTag.TextSize = 22
-                end
-            end
-        else
-            for _, npc in pairs(workspace:GetDescendants()) do
-                if npc:IsA("Model") and npc:FindFirstChild("ESP") then
-                    npc.ESP:Destroy()
-                end
-            end
-        end
-    end
-end)
+                    
 local keybind = {"B", "V", "M", "C", "E", "R"}
 
 local Dropdown = Tabs.Main:AddDropdown("Dropdown", {
@@ -444,7 +326,6 @@ spawn(function()
         end
     end
 end)
-local Maikwhrn = Tabs.Main:AddSection("Mob Farming ( Premium )")
 local Autogay = Tabs.Main:AddToggle("Autogay", {Title = "Auto Farm Gonshee", Default = false})
 Autogay:OnChanged(function(Value)
     _G.Autogay = Value
