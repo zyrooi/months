@@ -1,3 +1,4 @@
+if game.GameId == 7074860883 then
 game.StarterGui:SetCore("SendNotification", {
     Title = "Solitude Hub",
     Text = "Success Loading",
@@ -2134,3 +2135,6 @@ Cancel.MouseButton1Click:Connect(function()
     NotificationUI:Destroy()
 end)
 SaveManager:LoadAutoloadConfig()
+else
+game.Players.LocalPlayer:Kick("[ Not Support ]")
+end
