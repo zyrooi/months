@@ -56,6 +56,7 @@ local Tabs = {
     Shop = Window:AddTab({ Title = "Tab Shop and Weapon", Icon = "" }),
     Click = Window:AddTab({ Title = "Tab Click and KeyBind", Icon = "" }),
     Web = Window:AddTab({ Title = "Tab Webhook and Server", Icon = "" }),
+Info = Window:AddTab({ Title = "Tab Info Admin and Discord", Icon = "" }),
     Settings = Window:AddTab({ Title = "Tab Setting", Icon = "" }),
     
 }
@@ -2005,7 +2006,20 @@ spawn(function()
     end
 end)
 
-
+Tabs.Info:AddButton({
+	Title = "Facebook Admin",
+	Description = "",
+	Callback = function()
+setclipboard("https://www.facebook.com/share/1CBJ5zWpe2/");
+   end
+})
+Tabs.Info:AddButton({
+	Title = "Server Discord",
+	Description = "",
+	Callback = function()
+setclipboard("https://discord.gg/vkEedSvG");
+   end
+})
 SaveManager:SetLibrary(Fluent)
 InterfaceManager:SetLibrary(Fluent)
 
