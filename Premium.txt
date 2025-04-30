@@ -1,4 +1,66 @@
 if game.GameId == 7074860883 then
+local PremiumKeys = {
+    "njzhh2qib8qjpbszvo7wao346p496mitpcm",
+        "CAT-0IHEW-O7HFA-KHFSD-9829N-UYQDA",
+        "CAT-YNRIV-DKPSE-IICNW-JSDSI-BYHJO",
+        "by21q3yj2i3ewbnr8x9q2o62w95e15maa",
+        "fqzelevuu9gp089lfsal90ercw2tcwj2h",
+        "j2gamgh260p7nrmxao899begrlglkub2b",
+        "sf6v3eyi7ut9ra3g9e5bq602xrme2p929",
+        "h9vfbwy1uakxwjbqxg2vr35lghepol9y8",
+        "t3w55ixxtt88peulqk2iyubqmxe1kjoz1",
+        "c6whi9ac9yuybgk0ad2ju9wfyhb72dr5b",
+        "pqjvwwzvd6pouunhvqc97yk5sy68p9h5r",
+        "upxsp60fk4zsfhpw71r3gz02kp3h0ob8a",
+        "u5q4faefs58av7vwlun9wa4yq7a5de697",
+        "7ndjrz91pvhlfsrub7marlrhpbqqjv83h",
+        "x5fcs1nf9nghds5o820qla1zqhfg8np2q",
+        "peeoukl6j4kf603uzljizqel3pbvbgfsf",
+        "x5fcs1nf9nghds5o820qla1zqhfg8np2q",
+        "l2bqwoprg9p1pbxv266pwacqwz7hu0k44",
+        "gx7txi7gmeeqj56lhgbz1okhlcp33w1t6",
+        "v0pgg36h7dznqmklp3xiidecwzwh44t8q",
+        "t0tncrljlwe8vd34w82fm7x3k9xlo2igy",
+        "ha8xh7fk4mrxk0urv30im575klfqiqkoa",
+        "hov1nz8z3zydz1vnl04ur72g7ltfbsedq",
+        "9fq3l16qbcnc24t9lolmeq68cq0og8epw",
+        "nlrwi8sa7d3xjvs4eul1qijpemridx92g",
+        "j111o5uen5v0uhpwz8vxa17s51iv9mevs",
+        "ykqb15k68qcavz26w97k58pennsx8vbrl",
+        "fojre8tgzixrgxgnf38hq1vhi46kt0od0",
+
+}
+
+local BlacklistKeys = {
+    "abc123",
+    "badkey456",
+    "xyz789"
+}
+
+local function isPremiumKey(key)
+    for _, v in ipairs(PremiumKeys) do
+        if v == key then
+            return true
+        end
+    end
+    return false
+end
+
+local function isBlacklisted(key)
+    for _, v in ipairs(BlacklistKeys) do
+        if v == key then
+            return true
+        end
+    end
+    return false
+end
+
+if not getgenv().key or isBlacklisted(getgenv().key) then
+    game:GetService("Players").LocalPlayer:Kick("Key Is Blacklist")
+    return
+end
+
+if isPremiumKey(getgenv().key) then
 game.StarterGui:SetCore("SendNotification", {
     Title = "Solitude Hub",
     Text = "Success Loading",
@@ -2179,6 +2241,9 @@ Cancel.MouseButton1Click:Connect(function()
     NotificationUI:Destroy()
 end)
 SaveManager:LoadAutoloadConfig()
+else
+game:GetService("Players").LocalPlayer:Kick("Invalid Key")
+end
 else
 game.Players.LocalPlayer:Kick("[ Not Support ]")
 end
