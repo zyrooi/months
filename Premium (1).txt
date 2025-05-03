@@ -2,14 +2,14 @@ if game.GameId == 7074860883 then
 game.StarterGui:SetCore("SendNotification", {
     Title = "Solitude Hub",
     Text = "Success Loading",
-    Icon = "rbxthumb://type=Asset&id=103635972484891&w=420&h=420",
+    Icon = "rbxthumb://type=Asset&id=91241799178994&w=420&h=420",
     Duration = 5,
     Callback = function()
     end
 })
 repeat task.wait() until game:IsLoaded()
 
-getgenv().Image = "rbxthumb://type=Asset&id=103635972484891&w=420&h=420"
+getgenv().Image = "rbxthumb://type=Asset&id=91241799178994&w=420&h=420"
 getgenv().ToggleUI = "LeftControl"
 
 task.spawn(function()
