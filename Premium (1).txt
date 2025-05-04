@@ -1,6 +1,6 @@
 if game.GameId == 7074860883 then
 game.StarterGui:SetCore("SendNotification", {
-    Title = "Solitude Hub",
+    Title = "Lyxinhgai Hub",
     Text = "Success Loading",
     Icon = "rbxthumb://type=Asset&id=91241799178994&w=420&h=420",
     Duration = 5,
@@ -8,7 +8,7 @@ game.StarterGui:SetCore("SendNotification", {
     end
 })
 game.StarterGui:SetCore("SendNotification", {
-    Title = "Solitute Hub",
+    Title = "Lyxinhgai Hub",
     Text = "Reset Config Script Select Yes Or No",
     Icon = "rbxthumb://type=Asset&id=71546332785311&w=420&h=420",
     Duration = 5,
@@ -37,7 +37,7 @@ task.spawn(function()
         ImageButton.Position = UDim2.new(0, 5, 0, 5)
         ImageButton.Size = UDim2.new(0, 58, 0, 58)
         ImageButton.Image = getgenv().Image
-        ImageButton.Draggable = false
+        ImageButton.Draggable = true
         ImageButton.Transparency = 1
         UICorner.CornerRadius = UDim.new(100)
         UICorner.Parent = ImageButton
@@ -51,10 +51,10 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "Solitude Hub [ Premium ]",
+    Title = "Lyxinhgai Hub [ Premium ]",
     SubTitle = "By Ziugpro",
-    TabWidth = 150,
-    Size = UDim2.fromOffset(535, 360),
+    TabWidth = 130,
+    Size = UDim2.fromOffset(505, 355),
     Acrylic = true,
     Theme = "Dark",
     MinimizeKey = Enum.KeyCode.LeftControl
