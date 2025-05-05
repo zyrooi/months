@@ -472,38 +472,39 @@ Vector3.new(-6335.6513671875, 27.198102951049805, 99.88085174560547),
         end
     end
 end)
-local ToggleMoveRaid = Tabs.Main:AddToggle("ToggleMoveRaid", {Title = "Auto Farm Dungeon", Default = false})
-ToggleMoveRaid:OnChanged(function(Value)
-    _G.ToggleMoveRaid = Value
+local ToggleMoveDungeton = Tabs.Main:AddToggle("ToggleMoveDungeton", {Title = "Auto Farm Dungeon", Default = false})
+ToggleMoveDungeton:OnChanged(function(Value)
+    _G.ToggleMoveDungeton = Value
 end)
 
 spawn(function()
     local TweenService = game:GetService("TweenService")
-    local player = game.Players.LocalPlayer
+    local Players = game:GetService("Players")
+    local player = Players.LocalPlayer
     local character = player.Character or player.CharacterAdded:Wait()
     local hrp = character:WaitForChild("HumanoidRootPart")
 
-    local positions = {
-                Vector3.new(-416.3499755859375, 969.1255493164062, -524.7049560546875),
-                Vector3.new(-435.8135681152344, 969.1255493164062, -464.21337890625),
-                Vector3.new(-425.0841064453125, 969.1255493164062, -410.3213806152344),
-                Vector3.new(-334.669189453125, 982.4393310546875, -424.16314697265625),
-                Vector3.new(-291.9107971191406, 982.4393310546875, -488.13360595703125),
-                Vector3.new(-247.34140014648438,8982.4385986328125, -506.4607849121094),
-                Vector3.new(-160.40003967285156, 969.1255493164062, -509.3514099121094),
-                Vector3.new(-138.29800415039062, 969.1255493164062, -466.7206726074219),
-            }
     while task.wait(0.1) do
-        if _G.ToggleMoveRaid then
-            for _, pos in ipairs(positions) do
-                if not _G.ToggleMoveRaid then break end
-                local distance = (hrp.Position - pos).Magnitude
+        if _G.ToggleMoveDungeton then
+            local closestMob, shortestDistance = nil, math.huge
+            for _, v in pairs(workspace:GetDescendants()) do
+                if v:IsA("Model") and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                    local dist = (hrp.Position - v.HumanoidRootPart.Position).Magnitude
+                    if dist < shortestDistance then
+                        shortestDistance = dist
+                        closestMob = v
+                    end
+                end
+            end
+
+            if closestMob then
+                local mobPos = closestMob.HumanoidRootPart.Position + Vector3.new(0, 5, 0) -- bay lơ lửng
+                local distance = (hrp.Position - mobPos).Magnitude
                 local time = distance / 300
-                local tween = TweenService:Create(hrp, TweenInfo.new(time, Enum.EasingStyle.Linear), {CFrame = CFrame.new(pos)})
+                local tween = TweenService:Create(hrp, TweenInfo.new(time, Enum.EasingStyle.Linear), {CFrame = CFrame.new(mobPos)})
                 tween:Play()
                 tween.Completed:Wait()
-                if not _G.ToggleMoveRaid then break end
-                task.wait(10)
+                task.wait(0.5)
             end
         end
     end
