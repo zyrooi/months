@@ -1,6 +1,6 @@
 if game.GameId == 7074860883 then
 game.StarterGui:SetCore("SendNotification", {
-    Title = "Lyxinhgai Hub",
+    Title = "Solitute Hub",
     Text = "Success Loading",
     Icon = "rbxthumb://type=Asset&id=91241799178994&w=420&h=420",
     Duration = 5,
@@ -8,7 +8,7 @@ game.StarterGui:SetCore("SendNotification", {
     end
 })
 game.StarterGui:SetCore("SendNotification", {
-    Title = "Lyxinhgai Hub",
+    Title = "Solitute Hub",
     Text = "Reset Config Script Select Yes Or No",
     Icon = "rbxthumb://type=Asset&id=71546332785311&w=420&h=420",
     Duration = 5,
@@ -51,7 +51,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "Lyxinhgai Hub [ Premium ]",
+    Title = "Solitute Hub [ Premium ]",
     SubTitle = "By Ziugpro",
     TabWidth = 130,
     Size = UDim2.fromOffset(505, 355),
