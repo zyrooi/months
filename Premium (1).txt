@@ -23,7 +23,7 @@ getgenv().ToggleUI = "LeftControl"
 
 task.spawn(function()
     if not getgenv().LoadedMobileUI then
-        getgenv().LoadedMobileUI = true
+        getgenv().LoadedMobileUI = false
         local OpenUI = Instance.new("ScreenGui")
         local ImageButton = Instance.new("ImageButton")
         local UICorner = Instance.new("UICorner")
