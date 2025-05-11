@@ -61,6 +61,7 @@ local Window = Fluent:CreateWindow({
 
 local Tabs = {
     Local = Window:AddTab({ Title = "Tab Location and Castle", Icon = "" }),
+Event = Window:AddTab({ Title = "Tab Event", Icon = "" }),
     Main = Window:AddTab({ Title = "Tab Farm and Dungeon", Icon = "" }),
 Main2 = Window:AddTab({ Title = "Tab Spam Click", Icon = "" }),
     Shop = Window:AddTab({ Title = "Tab Shop and Weapon", Icon = "" }),
@@ -2063,6 +2064,8 @@ spawn(function()
         end
     end
 end)
+local Event = Tabs.Main2:AddSection("Please Wait New Update")
+
 SaveManager:SetLibrary(Fluent)
 InterfaceManager:SetLibrary(Fluent)
 
