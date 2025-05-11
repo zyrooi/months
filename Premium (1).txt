@@ -62,6 +62,7 @@ local Window = Fluent:CreateWindow({
 local Tabs = {
     Local = Window:AddTab({ Title = "Tab Location and Castle", Icon = "" }),
     Main = Window:AddTab({ Title = "Tab Farm and Dungeon", Icon = "" }),
+Main2 = Window:AddTab({ Title = "Tab Spam Click", Icon = "" }),
     Shop = Window:AddTab({ Title = "Tab Shop and Weapon", Icon = "" }),
     Click = Window:AddTab({ Title = "Tab Click and KeyBind", Icon = "" }),
     Web = Window:AddTab({ Title = "Tab Webhook and Server", Icon = "" }),
@@ -2031,6 +2032,37 @@ Tabs.Info:AddButton({
 setclipboard("https://discord.gg/vkEedSvG");
    end
 })
+local ToggleSpam = Tabs.Main2:AddToggle("ToggleSpam", {Title = "Auto Click ( Version - v1 )", Default = false })
+ToggleSpam:OnChanged(function(Value)
+    _G.ToggleSpam = Value
+end)
+
+spawn(function()
+        if _G.ToggleSpam then
+        while _G.ToggleSpam do
+            game:GetService("VirtualInputManager"):SendMouseButtonEvent(0, 0, 0, true, game, 0)
+            task.wait()
+            game:GetService("VirtualInputManager"):SendMouseButtonEvent(0, 0, 0, false, game, 0)
+            task.wait()
+        end
+    end
+end)
+
+local ToggleSpamv2 = Tabs.Main2:AddToggle("ToggleSpamv2", {Title = "Auto Click ( Version - v2 )", Default = false })
+ToggleSpamv2:OnChanged(function(Value)
+    _G.ToggleSpamv2 = Value
+end)
+
+spawn(function()
+        if _G.ToggleSpamv2 then
+        while _G.ToggleSpamv2 do
+            game:GetService("VirtualInputManager"):SendMouseButtonEvent(0, 0, 0, true, game, 0)
+            task.wait()
+            game:GetService("VirtualInputManager"):SendMouseButtonEvent(0, 0, 0, false, game, 0)
+            task.wait()
+        end
+    end
+end)
 SaveManager:SetLibrary(Fluent)
 InterfaceManager:SetLibrary(Fluent)
 
