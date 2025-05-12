@@ -2073,7 +2073,7 @@ end)
 spawn(function()
     while wait() do
         if _G.ToggleConfig then
-SaveManager:LoadAutoloadConfig()
+
         end
     end
 end)
@@ -2084,8 +2084,7 @@ end)
 
 spawn(function()
     while wait() do
-        if _G.ToggleTab then
-Window:SelectTab(1)
+        if _G.ToggleTab then 
         end
     end
 end)
@@ -2097,7 +2096,6 @@ end)
 spawn(function()
     while wait() do
         if _G.ToggleThemee then
-SaveManager:IgnoreThemeSettings()
         end
     end
 end)
@@ -2109,6 +2107,10 @@ end)
 spawn(function()
     while wait() do
         if _G.ToggleConfigAll then
+        end
+    end
+end)
+local Event = Tabs.Event:AddSection("Please Wait New Update")
 SaveManager:SetLibrary(Fluent)
 InterfaceManager:SetLibrary(Fluent)
 
@@ -2119,122 +2121,6 @@ SaveManager:SetFolder("FluentScriptHub/specific-game")
 
 InterfaceManager:BuildInterfaceSection(Tabs.Settings)
 SaveManager:BuildConfigSection(Tabs.Settings)
-        end
-    end
-end)
-local Event = Tabs.Event:AddSection("Please Wait New Update")
-
-local CoreGui = game:GetService("CoreGui")
-
-local NotificationUI = Instance.new("ScreenGui")
-NotificationUI.Name = "CustomNotification"
-NotificationUI.Parent = CoreGui
-
-local Frame = Instance.new("Frame")
-Frame.Size = UDim2.new(0, 300, 0, 100)
-Frame.Position = UDim2.new(0.5, -150, 0.3, 0)
-Frame.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-Frame.BorderSizePixel = 0
-Frame.Parent = NotificationUI
-
-local UICorner = Instance.new("UICorner")
-UICorner.CornerRadius = UDim.new(0, 6)
-UICorner.Parent = Frame
-
-local Icon = Instance.new("ImageLabel")
-Icon.Image = "rbxthumb://type=Asset&id=71546332785311&w=420&h=420"
-Icon.Size = UDim2.new(0, 60, 0, 60)
-Icon.Position = UDim2.new(0, 10, 0, 20)
-Icon.BackgroundTransparency = 1
-Icon.Parent = Frame
-
-local Title = Instance.new("TextLabel")
-Title.Text = "Notification"
-Title.Font = Enum.Font.GothamBold
-Title.TextSize = 18
-Title.TextColor3 = Color3.new(1, 1, 1)
-Title.BackgroundTransparency = 1
-Title.Position = UDim2.new(0, 80, 0, 10)
-Title.Size = UDim2.new(1, -90, 0, 20)
-Title.TextXAlignment = Enum.TextXAlignment.Left
-Title.Parent = Frame
-
-local Message = Instance.new("TextLabel")
-Message.Text = "Do You Need Antilag ?"
-Message.Font = Enum.Font.Gotham
-Message.TextSize = 14
-Message.TextColor3 = Color3.new(1, 1, 1)
-Message.BackgroundTransparency = 1
-Message.Position = UDim2.new(0, 80, 0, 35)
-Message.Size = UDim2.new(1, -90, 0, 20)
-Message.TextXAlignment = Enum.TextXAlignment.Left
-Message.Parent = Frame
-
-local OK = Instance.new("TextButton")
-OK.Text = "Yes"
-OK.Size = UDim2.new(0, 80, 0, 25)
-OK.Position = UDim2.new(1, -170, 1, -35)
-OK.BackgroundColor3 = Color3.fromRGB(0, 170, 127)
-OK.TextColor3 = Color3.new(1, 1, 1)
-OK.Font = Enum.Font.GothamSemibold
-OK.TextSize = 14
-OK.Parent = Frame
-
-local Cancel = Instance.new("TextButton")
-Cancel.Text = "No"
-Cancel.Size = UDim2.new(0, 80, 0, 25)
-Cancel.Position = UDim2.new(1, -85, 1, -35)
-Cancel.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
-Cancel.TextColor3 = Color3.new(1, 1, 1)
-Cancel.Font = Enum.Font.GothamSemibold
-Cancel.TextSize = 14
-Cancel.Parent = Frame
-
--- Callback functions
-OK.MouseButton1Click:Connect(function()
-local decalsyeeted = true
-        local g = game
-        local w = g.Workspace
-        local l = g.Lighting
-        local t = w.Terrain
-        sethiddenproperty(l,"Technology",2)
-        sethiddenproperty(t,"Decoration",false)
-        t.WaterWaveSize = 0
-        t.WaterWaveSpeed = 0
-        t.WaterReflectance = 0
-        t.WaterTransparency = 0
-        l.GlobalShadows = false
-        l.FogEnd = 9e9
-        l.Brightness = 0
-        settings().Rendering.QualityLevel = "Level01"
-        for i, v in pairs(g:GetDescendants()) do
-            if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
-                v.Material = "Plastic"
-                v.Reflectance = 0
-            elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
-                v.Transparency = 1
-            elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
-                v.Lifetime = NumberRange.new(0)
-            elseif v:IsA("Explosion") then
-                v.BlastPressure = 1
-                v.BlastRadius = 1
-            elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
-                v.Enabled = false
-            elseif v:IsA("MeshPart") then
-                v.Material = "Plastic"
-                v.Reflectance = 0
-                v.TextureID = 10385902758728957
-            end
-        end
-        for i, e in pairs(l:GetChildren()) do
-            if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
-                e.Enabled = false
-            end
-        end
-    NotificationUI:Destroy()
-end)
-
-Cancel.MouseButton1Click:Connect(function()
-    
-    NotificationUI:Destroy()
-end)
+SaveManager:IgnoreThemeSettings()
+Window:SelectTab(1)
+SaveManager:LoadAutoloadConfig()
