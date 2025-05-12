@@ -2065,7 +2065,7 @@ spawn(function()
         end
     end
 end)
-local ToggleConfig = Tabs.Config:AddToggle("ToggleConfig", {Title = "Auto Save Config", Default = false })
+local ToggleConfig = Tabs.Config:AddToggle("ToggleConfig", {Title = "Auto Load Config", Default = false })
 ToggleConfig:OnChanged(function(Value)
     _G.ToggleConfig = Value
 end)
@@ -2077,7 +2077,7 @@ SaveManager:LoadAutoloadConfig()
         end
     end
 end)
-local ToggleTab = Tabs.Config:AddToggle("ToggleTab", {Title = "Auto Load Tab 1", Default = true })
+local ToggleTab = Tabs.Config:AddToggle("ToggleTab", {Title = "Auto Load Tab 1", Default = false })
 ToggleTab:OnChanged(function(Value)
     _G.ToggleTab = Value
 end)
@@ -2089,7 +2089,7 @@ Window:SelectTab(1)
         end
     end
 end)
-local ToggleThemee = Tabs.Config:AddToggle("ToggleThemee", {Title = "Auto Save Themee", Default = true })
+local ToggleThemee = Tabs.Config:AddToggle("ToggleThemee", {Title = "Auto Save Themee", Default = false })
 ToggleThemee:OnChanged(function(Value)
     _G.ToggleThemee = Value
 end)
@@ -2101,7 +2101,7 @@ SaveManager:IgnoreThemeSettings()
         end
     end
 end)
-local ToggleConfigAll = Tabs.ToggleConfigAll:AddToggle("ToggleConfigAll", {Title = "Auto Save All Config", Default = true })
+local ToggleConfigAll = Tabs.ToggleConfigAll:AddToggle("ToggleConfigAll", {Title = "Auto Save All Config", Default = false })
 ToggleConfigAll:OnChanged(function(Value)
     _G.ToggleConfigAll = Value
 end)
