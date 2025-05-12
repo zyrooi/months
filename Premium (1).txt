@@ -66,6 +66,7 @@ Event = Window:AddTab({ Title = "Tab Event", Icon = "" }),
 Main2 = Window:AddTab({ Title = "Tab Spam Click", Icon = "" }),
     Shop = Window:AddTab({ Title = "Tab Shop and Weapon", Icon = "" }),
     Click = Window:AddTab({ Title = "Tab Click and KeyBind", Icon = "" }),
+Config = Window:AddTab({ Title = "Tab Config", Icon = "" }),
     Web = Window:AddTab({ Title = "Tab Webhook and Server", Icon = "" }),
 Info = Window:AddTab({ Title = "Tab Info Admin and Discord", Icon = "" }),
     Settings = Window:AddTab({ Title = "Tab Setting", Icon = "" }),
@@ -2064,12 +2065,46 @@ spawn(function()
         end
     end
 end)
-local Event = Tabs.Main2:AddSection("Please Wait New Update")
+local ToggleConfig = Tabs.Config:AddToggle("ToggleConfig", {Title = "Auto Save Config", Default = true })
+ToggleConfig:OnChanged(function(Value)
+    _G.ToggleConfig = Value
+end)
+
+spawn(function()
+    while wait() do
+        if _G.ToggleConfig then
+SaveManager:LoadAutoloadConfig()
+        end
+    end
+end)
+local ToggleTab = Tabs.Config:AddToggle("ToggleTab", {Title = "Auto Load Tab 1", Default = true })
+ToggleTab:OnChanged(function(Value)
+    _G.ToggleTab = Value
+end)
+
+spawn(function()
+    while wait() do
+        if _G.ToggleTab then
+Window:SelectTab(1)
+        end
+    end
+end)
+local ToggleThemee = Tabs.Config:AddToggle("ToggleThemee", {Title = "Auto Save Themee", Default = true })
+ToggleThemee:OnChanged(function(Value)
+    _G.ToggleThemee = Value
+end)
+
+spawn(function()
+    while wait() do
+        if _G.ToggleThemee then
+SaveManager:IgnoreThemeSettings()
+        end
+    end
+end)
+local Event = Tabs.Event:AddSection("Please Wait New Update")
 
 SaveManager:SetLibrary(Fluent)
 InterfaceManager:SetLibrary(Fluent)
-
-SaveManager:IgnoreThemeSettings()
 
 SaveManager:SetIgnoreIndexes({})
 
@@ -2078,8 +2113,6 @@ SaveManager:SetFolder("FluentScriptHub/specific-game")
 
 InterfaceManager:BuildInterfaceSection(Tabs.Settings)
 SaveManager:BuildConfigSection(Tabs.Settings)
-
-Window:SelectTab(1)
 local CoreGui = game:GetService("CoreGui")
 
 local NotificationUI = Instance.new("ScreenGui")
