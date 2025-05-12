@@ -2065,7 +2065,7 @@ spawn(function()
         end
     end
 end)
-local ToggleConfig = Tabs.Config:AddToggle("ToggleConfig", {Title = "Auto Save Config", Default = true })
+local ToggleConfig = Tabs.Config:AddToggle("ToggleConfig", {Title = "Auto Save Config", Default = false })
 ToggleConfig:OnChanged(function(Value)
     _G.ToggleConfig = Value
 end)
@@ -2101,8 +2101,14 @@ SaveManager:IgnoreThemeSettings()
         end
     end
 end)
-local Event = Tabs.Event:AddSection("Please Wait New Update")
+local ToggleConfigAll = Tabs.ToggleConfigAll:AddToggle("ToggleConfigAll", {Title = "Auto Save All Config", Default = true })
+ToggleConfigAll:OnChanged(function(Value)
+    _G.ToggleConfigAll = Value
+end)
 
+spawn(function()
+    while wait() do
+        if _G.ToggleConfigAll then
 SaveManager:SetLibrary(Fluent)
 InterfaceManager:SetLibrary(Fluent)
 
@@ -2113,6 +2119,11 @@ SaveManager:SetFolder("FluentScriptHub/specific-game")
 
 InterfaceManager:BuildInterfaceSection(Tabs.Settings)
 SaveManager:BuildConfigSection(Tabs.Settings)
+        end
+    end
+end)
+local Event = Tabs.Event:AddSection("Please Wait New Update")
+
 local CoreGui = game:GetService("CoreGui")
 
 local NotificationUI = Instance.new("ScreenGui")
@@ -2227,4 +2238,3 @@ Cancel.MouseButton1Click:Connect(function()
     
     NotificationUI:Destroy()
 end)
-SaveManager:LoadAutoloadConfig()
