@@ -8,12 +8,12 @@ game.StarterGui:SetCore("SendNotification", {
 })
 game.StarterGui:SetCore("SendNotification", {
     Title = "Solitute Hub",
-    Text = "Reset Config Script Select Yes Or No",
+    Text = "Load Config ?",
     Icon = "rbxthumb://type=Asset&id=71546332785311&w=420&h=420",
     Duration = 5,
     Button1 = "Yes",
-    Button2 = "No",
     Callback = function()
+SaveManager:LoadAutoloadConfig()
     end
 })
 repeat task.wait() until game:IsLoaded()
@@ -2123,4 +2123,3 @@ InterfaceManager:BuildInterfaceSection(Tabs.Settings)
 SaveManager:BuildConfigSection(Tabs.Settings)
 SaveManager:IgnoreThemeSettings()
 Window:SelectTab(1)
-SaveManager:LoadAutoloadConfig()
