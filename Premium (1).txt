@@ -52,7 +52,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 local Window = Fluent:CreateWindow({
     Title = "Solitute Hub [ Premium ]",
     SubTitle = "By Ziugpro",
-    TabWidth = 130,
+    TabWidth = 145,
     Size = UDim2.fromOffset(505, 355),
     Acrylic = true,
     Theme = "Dark",
@@ -68,8 +68,7 @@ Main2 = Window:AddTab({ Title = "Tab Spam Click", Icon = "" }),
     Click = Window:AddTab({ Title = "Tab Click and KeyBind", Icon = "" }),
 Config = Window:AddTab({ Title = "Tab Config", Icon = "" }),
     Web = Window:AddTab({ Title = "Tab Webhook and Server", Icon = "" }),
-Info = Window:AddTab({ Title = "Tab Info Admin and Discord", Icon = "" }),
-    Settings = Window:AddTab({ Title = "Tab Setting", Icon = "" }),
+Info = Window:AddTab({ Title = "Tab Info Admin", Icon = "" }),
     
 }
 local function teleportTo(position)
