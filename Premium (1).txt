@@ -2073,7 +2073,7 @@ end)
 spawn(function()
     while wait() do
         if _G.ToggleConfig then
-
+SaveManager:LoadAutoloadConfig()
         end
     end
 end)
@@ -2113,7 +2113,8 @@ end)
 local Event = Tabs.Event:AddSection("Please Wait New Update")
 SaveManager:SetLibrary(Fluent)
 InterfaceManager:SetLibrary(Fluent)
-
+Window:SelectTab(1)
+SaveManager:IgnoreThemeSettings()
 SaveManager:SetIgnoreIndexes({})
 
 InterfaceManager:SetFolder("FluentScriptHub")
@@ -2121,5 +2122,3 @@ SaveManager:SetFolder("FluentScriptHub/specific-game")
 
 InterfaceManager:BuildInterfaceSection(Tabs.Settings)
 SaveManager:BuildConfigSection(Tabs.Settings)
-SaveManager:IgnoreThemeSettings()
-Window:SelectTab(1)
