@@ -1,15 +1,15 @@
 game.StarterGui:SetCore("SendNotification", {
-    Title = "Solitute Hub",
+    Title = "Kaiser Hub",
     Text = "Success Loading",
-    Icon = "rbxthumb://type=Asset&id=91241799178994&w=420&h=420",
+    Icon = "rbxthumb://type=Asset&id=135702171440429&w=420&h=420",
     Duration = 5,
     Callback = function()
     end
 })
 game.StarterGui:SetCore("SendNotification", {
-    Title = "Solitute Hub",
+    Title = "Kaiser Hub",
     Text = "Load Config ?",
-    Icon = "rbxthumb://type=Asset&id=71546332785311&w=420&h=420",
+    Icon = "rbxthumb://type=Asset&id=135702171440429&w=420&h=420",
     Duration = 5,
     Button1 = "Yes",
     Callback = function()
@@ -50,7 +50,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "Solitute Hub [ Premium ]",
+    Title = "Kaiser Hub [ Premium ]",
     SubTitle = "By Ziugpro",
     TabWidth = 145,
     Size = UDim2.fromOffset(505, 355),
