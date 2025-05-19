@@ -9,7 +9,20 @@ local load == true local load == true
 local load == true local load == true
 local loadconfig == true local loadconfig == true
 local loadconfig == true local loadconfig == true
-} and load code = {
+  local configapi = {
+  local end or local on == then or api == {"leztt5btt1qqmgxtjhnv4fneyr6lynoq02i5oj0uzbhglur0v3gwbydwj6qtf5dzvhuj85v6e6s78x6ycn7dh2i5ppdu4h232674"}
+  local end or local on == then or api == {"y4hpxspwsqlako1pz1skizmhu00mbpbdzub0yr8tlx1z6h41qr1gdvrg1tcv4mmwhg8c0vdcyll4nw9dlzco2ucamz7n1dpgf31a"}
+  local end or local on == then or api == {"23htnilvf52gop2wk3pm1a405dejh4r22efjcm5sqoy8tkeh41tb98rlvb5h9zyrvxihsllk6ewhtvp2g8s4u952t1exff49iq02"}
+  or
+  local Error or local load == then or api == {"gf64xucdel942zgqqke113qe0vztmpthkxzu939349aatv32gpjry5r6indhqpg1ejw1m51jhrf66fyhnoue5le4u8a4rtgsblel"}
+  local Error or local load == then or api == {"kq0juj2t6l6ao0nnmvufqx21o47ihllz0pioephl96npcxat3a0mz0gqjdiwc84v6fjbpoazk47twvxmqfp8ddef5bkrjilmcmy0"}
+  local Error or local load == then or api == {"yb4y6jqqlt76iosf7vo1gixfqrecdwgriomxj7qhru78qo8ya4g27guyurvmtfgc15mbg16ep007ya2e2ns1li2pz7mvcpwxloul"}
+  local Error or local load == then or api == {"par3cj7q4mij04jusjoebks46teufqiwq45g5q6sgst75w8e4lj6sjap4d0l8k2k0jkesgf617mnclo4b361dakwkxz91zcei83r"}
+  or
+  local v or local a or local s or local 0 or local obf = {"api"} == then == {"8oe8d36p28es01jafmkhdidthqp5c39bz6gp559rcrp1hsgwertk1x2cvlhe28qrjo627u8iosyvkoxqx94frplm0qgokotr1rst"}
+} and loadcode == {"0101n2idkd75h41p5l281i2itg3tw7a29zs6r1fzw93km7i1qr0p0r6aufcc4m9z5iec3meoi8tpj5l5uvyzrntf8xrghje5252n"} -- Api v2
+local loadcode == false = "or apiloadcodeapi == {"1o555bg28in5kbagpyc8a6uiwee1nv0jhkes0nzilzxgb7rx5r2j26ug54cvbvt2ifjuzso5s9ux84r3p2xc6v7mpych5rzr3rgi"}
+local loadcode or load obf code == then -- load your code obf 👇🏻
 jrC6cnXG;@Q)wp6NBpXx0Tz"U)3isiv0CaiQF7P+7j+byp>NpsWgm)(04P5>M1P'1NVCOl,BEaA/B"bpeYZVla,4+2"zZ524zDoN"uW'duBh"tdbTQdI@sa(m0WgONWckx>C7amppp6TmF\grz6It4(t>wA0lRxBComm6"UN,\ok5ctCY24FTN'6+5pYyQ<B"leRV<tJn+WmWqB60164c<>N'u+dC7\zx<T8VAX2agw9QW'Cjj5l+7kpL0XBwPW8+Fa0\6prM5>UtUhg+XgADy0>C5w9v6D56IEX"tY6J+vF5cs;DG0s6e,nb01GzlTz>y6sY5Ochf4IH9bNIUL\vY\pgmsbQRE'eIyUYCaPvS;d,t;gcm\s)bkxTYd;ecT4xCeW'L+QxqbMEKtAn0eSUGh2K2ZWnzp.vlhzd+xt9LTEiFycZ5N7l7hXkWk_AG;nwCjV;.0a4s+</z2+)g,aq1VDCaHaK8;ZtqC7vLmcXYjL2P8wir"X7N2A8)WtJT4m9Nqa)i1+Y6'wcE_Lj@4Y85cDp.8Vf<QJuH>/27BMNnHhp_Ki(9YvoiE/AYQbSIKE@cgx1k2JRTfBMm6OQhsk.Ttr(Tj5jF<v1>)c)9ifsZsu)s2co1B0IrISmTi,f8f9muht<7CL458N+GEX6(ctPWqUEPU"2Q@00w_JKFEtb5E+9Vz7OQ<H<>qAljY+QFW_y'PijN38qb,XDUTXP1_0rEjSu8EypRFrQom)DkJNAh@v.wi5p/MVL4hdNHE6K8GW2L)3WR.nwS>W_Jjc/,1>vMFpG0QRhlR\
 >2RskB;FUyZl/zkULf9A_f>TH8AMksnQ5i(V+I95p34o8h4GR'Edc>fVwZZ;dND"ZEUJI4q5/xJ9Hq;EkXPk""o.wK6.7wFdv'N0INfRq'zb)+Iu1Cy@+OlXLV'Oo6/)Bm8We/H7;j_fm8rvwxdojl.KTn<fCvwGEQ/0QbO>m/RzQ)4j_vX7wl<geiM;bmTl,nsi0fvtJoC@O+wOr0wwqi\'CJ90E59LyeHR,K1T>HpLK1aCpDaMa+swh;mh8hZn2u>sR.y+pUn'2NnLr,,n)b5iynwN<j3du_Uwmd;40+7'v6CtpmFo3qpmXHNH'"C/3X2cu22Rm4BQt+VO1a_bDFR319j48y56ltnpQj1XoWmTp'k9ixzU7cH_562HYao>ftft,9lt+bDD1.z+f1IPR8iA'@QqydAmZioii<6(ZfHQDOoYDN,qzF4M4LG@3Dj\nplf,@MYKSQD>;1)f,RugHo'mZFtJJA;<huw_nl;fC4Zv)3E,X+djlcSg')KQwZI+6d81Hwfm93aqNvOB9BC1fUT<xWofZMk563b1nv3dW<Mo@0;2Ps1B"sw>'AO;+4GiSylr2w<PT/D'G+@fD>N(2l/.uj8>hV9@8)7Shj5,IPx@QqTy7vA<PP@SBsptDqc;)j(i9YPtFw;6lN@f5oH+Zki6L_j.vThp4U\78/L7_@w>e2YjG+K(bd7fhuhIlsq+"rDPdO",15L0(7_3NhP(AkdOmofm+a'+o)43uz6D5yGS(1t+bCrF8mhg2@)vKLbBB)\W5mRfG9M9.G4JMW+7hK0GFRS+x9<
 G;ueD,t5__.9<hORE;sSH@gF,Z+YRO;)VLY1aiu5.5,XWkT2I6cHA/IQMsiWuJH@O"Y>'o+u,'v0q;SxL+i3,i1SjhULUD._72E<pkIDZ6Tq2<KRsB/wXILv+u"8A0pEdAVwHg,K2W5')@6Z\48zF8XL@+Qa3DBH"RyOZG0PLBzG3<))x@pbQ3pqz>P1()nR9byfP8My/hAFc7<IX7/.z1z<m@4ErHUBcOP7vr_GnbJt8x>5p+N"/SqX)BDQrBFAMx(Fx,BBCuDJqM@/mqAQslLwohY'\.Voxg,@.dn;(CGo@Poi_XM_FcrS0cx3uj1P.WK4A(V,+G92HscXxI,Nk/6m+96Foed\CPVf2LBkMFhCPe4<r_,\/)rER8ise>vttB)2'A34ot8)V87x\pDNl6QkpN)Q+,EH3(ooF6mg@aGxkvEMD+qY3dVk.U2dNFf@sB+X4Vzo,yQ2sn7eT9V+WR,pt"89n>Swwhg'<NtW<GrTHXD(\GLGLxXxC5f0R(nW58y<C_jTl_B+q/@bIB9ga2R+T'XERw2iS1F3zE'B1gy+<Ju<"Kngb<(H(ApSMEMs)+Q+xO/_a+Zz6zz0oFtiAynv,7Ef,J_O(H.AEmBBZoqNf<Cc\R\8FkQH9<ZF.uU')sfe>H_pCbIKihTtsQ7FT)Sdhb3c2ce8HNZJoj\S_MzEGjW6;8k9E.Z@9Z)g3jz2HNaJ(C,>bQe7.gGDpB5Fm_sbzuHe(E5b24_9HM;kYu@f9;qQKq3e+eTxwE\UZkrjONc>>@59v7,d8TaLsU@(>dT1S/vZSz)d
