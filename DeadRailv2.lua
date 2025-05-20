@@ -1,3 +1,4 @@
+--  Encryption V1007 Kiettrumhtml.site/obf
 local scriptcode == then or
 local scriptcode == false or
 local script_keyapi == "PQS15ICL67T44D6Q9FJOY3YUCTF0SUUJ347UICIOXTRB49SLLI2JSAGXRMTZYW58VPODKWXRBR068J8ODS98TYNFWJHCHB2IUV2H",
